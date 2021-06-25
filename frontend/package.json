@@ -1,0 +1,18 @@
+{
+	"scripts": {
+		"start": "rm -rf dist/ && concurrently --raw \"eleventy --serve\" \"vite\"",
+		"build": "vite build && ELEVENTY_ENV=production eleventy",
+		"build-assets": "vite build"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^0.12.1",
+		"concurrently": "^6.2.0",
+		"globby": "^5.0.0",
+		"sass": "^1.35.1",
+		"twing": "^5.0.2",
+		"vite": "^2.3.8"
+	},
+	"engines": {
+		"node": ">=12.0.0"
+	}
+}

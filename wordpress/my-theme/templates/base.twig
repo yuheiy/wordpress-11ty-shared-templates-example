@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html {{ site.language_attributes }}>
+	<head>
+		<meta charset="{{ site.charset }}" />
+		<meta name="viewport" content="width=device-width" />
+		{{
+			function("wp_head")
+		}}
+	</head>
+
+	<body class="{{ body_class }}">
+		{{ function("wp_body_open") }}
+		{{ include("components/page-head/page-head.twig") }}
+		{% block content %}{% endblock %}
+		{{ function("wp_footer") }}
+	</body>
+</html>

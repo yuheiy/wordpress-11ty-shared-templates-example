@@ -1,0 +1,8 @@
+{% extends "base.twig" %}{% block content %}
+<main>
+	<h1>{{ post.title }}</h1>
+	{{
+		include("components/post-body/post-body.twig", { content: post.content })
+	}}
+</main>
+{% endblock %}
