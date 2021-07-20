@@ -1,5 +1,5 @@
 module.exports = (eleventyConfig) => {
-	eleventyConfig.addWatchTarget("src/components/**/*.twig");
+	eleventyConfig.addWatchTarget("src/assets/components/**/*.twig");
 
 	eleventyConfig.setBrowserSyncConfig({
 		server: null, // override

@@ -2,13 +2,12 @@
 
 set -e
 
-# twig templates
-rm -rf my-theme/templates/components
-cp -r ../frontend/src/components my-theme/templates/components
-find my-theme/templates/components -type f ! -name *.twig | xargs rm
+# twig templates, images, etc
+rm -rf theme/assets
+cp -r ../frontend/src/assets theme/assets
 
-# assets
-rm -rf my-theme/assets my-theme/manifest.json
+# build files
+rm -rf theme/build
 npm install --prefix ../frontend
 npm run build-assets --prefix ../frontend
-cp -r ../frontend/dist/wp-content/themes/my-theme/ my-theme
+cp -r ../frontend/dist/wp-content/themes/theme/build theme/build

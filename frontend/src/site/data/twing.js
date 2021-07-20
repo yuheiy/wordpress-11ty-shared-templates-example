@@ -7,7 +7,7 @@ module.exports = async () => {
 	const templates = Object.assign(
 		{},
 		...(await Promise.all([
-			loadFrom(path.join(__dirname, "../.."), "components/**/*.twig"),
+			loadFrom(path.join(__dirname, "../../assets"), "components/**/*.twig"),
 			loadFrom(path.join(__dirname, "../includes"), "**/*.twig"),
 		]))
 	);

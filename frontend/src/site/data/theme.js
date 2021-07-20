@@ -19,6 +19,6 @@ module.exports = {
 	get get() {
 		throw new Error("not implemented");
 	},
-	link: "https://example.com/wp-content/themes/my-theme",
-	path: "/wp-content/themes/my-theme",
+	link: "https://example.com/wp-content/themes/theme",
+	path: "/wp-content/themes/theme",
 };
