@@ -1,10 +1,8 @@
 <?php
 
-declare(strict_types=1);
-
 Timber::$dirname = ["templates", "assets"];
 
-add_action("wp_head", function (): void {
+add_action("wp_head", function () {
 	$manifest = vite_manifest();
 
 	echo sprintf(
@@ -27,7 +25,7 @@ add_action("wp_head", function (): void {
 	) . "\n";
 });
 
-function vite_manifest(): array
+function vite_manifest()
 {
 	return json_decode(
 		file_get_contents(get_theme_file_path("build/manifest.json")),
