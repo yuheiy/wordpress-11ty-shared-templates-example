@@ -7,7 +7,7 @@ add_action("wp_head", function () {
 
 	echo sprintf(
 		'<link rel="icon" href="%s">',
-		get_theme_file_uri("/assets/favicon.ico")
+		get_theme_file_uri("assets/favicon.ico")
 	) . "\n";
 
 	foreach ($manifest["src/assets/main.js"]["css"] as $css_path) {
@@ -19,9 +19,7 @@ add_action("wp_head", function () {
 
 	echo sprintf(
 		'<script type="module" src="%s"></script>',
-		get_theme_file_uri(
-			"build/" . $manifest["src/assets/main.js"]["file"]
-		)
+		get_theme_file_uri("build/" . $manifest["src/assets/main.js"]["file"])
 	) . "\n";
 });
 
