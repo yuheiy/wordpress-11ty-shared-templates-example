@@ -26,7 +26,7 @@ add_action("wp_head", function () {
 function vite_manifest()
 {
 	return json_decode(
-		file_get_contents(get_theme_file_path("build/manifest.json")),
+		file_get_contents(get_theme_file_path("manifest.json")),
 		true
 	);
 }

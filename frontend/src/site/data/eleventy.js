@@ -7,14 +7,12 @@ module.exports = async () => {
 
 	if (isProd) {
 		manifest = JSON.parse(
-			await fsPromises.readFile(
-				"dist/wp-content/themes/theme/build/manifest.json"
-			)
+			await fsPromises.readFile("dist/wp-content/themes/theme/manifest.json")
 		);
 	}
 
 	return {
 		is_dev: !isProd,
-		manifest,
+		manifest
 	};
 };

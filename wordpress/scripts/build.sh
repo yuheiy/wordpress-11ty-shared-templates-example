@@ -2,12 +2,8 @@
 
 set -e
 
-# twig templates, images, etc
-rm -rf theme/assets
-cp -r ../frontend/src/assets theme/assets
-
-# build files
-rm -rf theme/build
+rm -rf theme/assets theme/build theme/manifest.json
 npm install --prefix ../frontend
 npm run build-assets --prefix ../frontend
-cp -r ../frontend/dist/wp-content/themes/theme/build theme/build
+cp -r ../frontend/dist/wp-content/themes/theme/ theme/
+cp -r ../frontend/src/assets/components/ theme/assets/components/

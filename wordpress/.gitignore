@@ -1,3 +1,4 @@
 node_modules
 theme/assets
 theme/build
+theme/manifest.json

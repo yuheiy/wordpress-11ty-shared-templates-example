@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"dev": "rm -rf dist/ && concurrently --raw \"eleventy --serve\" \"vite\"",
-		"build": "vite build && cp -r src/assets dist/wp-content/themes/theme && ELEVENTY_ENV=production eleventy",
+		"build": "vite build && ELEVENTY_ENV=production eleventy",
 		"build-assets": "vite build"
 	},
 	"devDependencies": {
