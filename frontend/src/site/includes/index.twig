@@ -1,21 +1,34 @@
-{% extends "base.twig" %}{% block content %}
-<main>
-	<h1>Home</h1>
-	{{ include("components/button/button.twig", { content: "Hello" }) }}
-	{{
-		include("components/card/card.twig", {
-			title: "Card Title",
-			description:
-				"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam maxime, dolore maiores deserunt provident itaque ipsam reiciendis cupiditate aspernatur obcaecati sint facere iste fuga quos nobis ex magnam dolor reprehenderit."
-		})
-	}}
-	<p>Posts:</p>
-	<ul>
-		{% for post in fixtures.posts %}
-		<li>
-			<a href="{{ post.link }}">{{ post.title }}</a>
-		</li>
-		{% endfor %}
-	</ul>
-</main>
+{% extends 'base.twig' %}
+
+{% block content %}
+	<main>
+		<h1>
+			Home
+		</h1>
+		{{
+			include(
+				'components/button/button.twig',
+				{
+					content: 'Hello'
+				}
+			)
+		}}
+		{{
+			include(
+				'components/card/card.twig',
+				{
+					title: 'Card Title',
+					description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam maxime, dolore maiores deserunt provident itaque ipsam reiciendis cupiditate aspernatur obcaecati sint facere iste fuga quos nobis ex magnam dolor reprehenderit.'
+				}
+			)
+		}}
+		<p>
+			Posts:
+		</p>
+		<ul>
+			{% for post in fixtures.posts %}
+				<li><a href="{{ post.link }}">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+	</main>
 {% endblock %}

@@ -1,23 +1,37 @@
-{% extends "base.twig" %}{% block content %}
-<main>
-	<h1>{{ post.title }}</h1>
-	{% set post_content %}
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam cumque
-		quas accusantium id vitae hic ipsam deleniti soluta eaque perferendis, cum
-		nulla. Officia, reiciendis provident asperiores qui non sunt.
-	</p>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam cumque
-		quas accusantium id vitae hic ipsam deleniti soluta eaque perferendis, cum
-		nulla. Officia, reiciendis provident asperiores qui non sunt.
-	</p>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam cumque
-		quas accusantium id vitae hic ipsam deleniti soluta eaque perferendis, cum
-		nulla. Officia, reiciendis provident asperiores qui non sunt.
-	</p>
-	{% endset %}
-	{{ include("components/post-body/post-body.twig", { content: post_content }) }}
-</main>
+{% extends 'base.twig' %}
+
+{% block content %}
+	<main>
+		<h1>
+			{{ post.title }}
+		</h1>
+		{% set post_content %}
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam
+				cumque quas accusantium id vitae hic ipsam deleniti soluta eaque
+				perferendis, cum nulla. Officia, reiciendis provident asperiores qui non
+				sunt.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam
+				cumque quas accusantium id vitae hic ipsam deleniti soluta eaque
+				perferendis, cum nulla. Officia, reiciendis provident asperiores qui non
+				sunt.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, magnam
+				cumque quas accusantium id vitae hic ipsam deleniti soluta eaque
+				perferendis, cum nulla. Officia, reiciendis provident asperiores qui non
+				sunt.
+			</p>
+		{% endset %}
+		{{
+			include(
+				'components/post-body/post-body.twig',
+				{
+					content: post_content
+				}
+			)
+		}}
+	</main>
 {% endblock %}

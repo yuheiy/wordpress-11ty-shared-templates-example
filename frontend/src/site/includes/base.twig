@@ -3,24 +3,30 @@
 	<head>
 		<meta charset="{{ site.charset }}" />
 		<meta name="viewport" content="width=device-width" />
-		<title>{% if title %}{{ title }} - {% endif %}{{ site.name }}</title>
+		<title>
+			{% if title %}
+				{{ title }} -
+			{% endif %}{{ site.name }}
+		</title>
 		<link rel="icon" href="{{ theme.path }}/favicon.ico" />
 		{% if eleventy.is_dev %}
-		<script type="module" src="{{ theme.path }}/@vite/client"></script>
-		<script type="module" src="{{ theme.path }}/src/assets/main.js"></script>
+			<script type="module" src="{{ theme.path }}/@vite/client"></script>
+			<script type="module" src="{{ theme.path }}/src/assets/main.js"></script>
 		{% endif %}
 		{% if eleventy.manifest %}
-		{% for css in eleventy.manifest["src/main.js"].css %}
-		<link rel="stylesheet" href="{{ theme.path }}/{{ css }}" />
-		{% endfor %}
-		<script
-			type="module"
-			src="{{ theme.path }}/{{ eleventy.manifest["src/assets/main.js"].file }}"
-		></script>
+			{% for css_path in eleventy.manifest['src/main.js'].css %}
+				<link rel="stylesheet" href="{{ theme.path }}/{{ css_path }}" />
+			{% endfor %}
+			<script type="module"
+				src="{{ theme.path }}/{{
+				eleventy.manifest['src/assets/main.js'].file
+				}}"></script>
 		{% endif %}
 	</head>
 	<body>
-		{{ include("components/page-head/page-head.twig") }}
-		{% block content %}{% endblock %}
+		{{ include('components/page-head/page-head.twig') }}
+		{% block content %}
+
+		{% endblock %}
 	</body>
 </html>
