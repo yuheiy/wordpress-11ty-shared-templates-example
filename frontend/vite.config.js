@@ -4,9 +4,6 @@
 export default {
 	base: "/wp-content/themes/theme/",
 	logLevel: "warn",
-	server: {
-		open: false,
-	},
 	build: {
 		outDir: "dist/wp-content/themes/theme/build",
 		assetsDir: ".",
